@@ -1,0 +1,26 @@
+[
+  {
+    "ParameterKey": "DevServerPort",
+    "ParameterValue": "8081"
+  },
+  {
+    "ParameterKey": "DevServerBasePath",
+    "ParameterValue": "app"
+  },
+  {
+    "ParameterKey": "InstanceVolumeSize",
+    "ParameterValue": "30"
+  },
+  {
+    "ParameterKey": "HomeFolder",
+    "ParameterValue": "/home/ubuntu/agentic-workshop/"
+  },
+  {
+    "ParameterKey": "InstanceType",
+    "ParameterValue": "c7i.xlarge"
+  },
+  {
+    "ParameterKey": "EC2KeyPair",
+    "ParameterValue": "ws-default-keypair"
+  }
+]

@@ -1,6 +1,7 @@
 import agent_tools
 import streamlit as st
 from PIL import Image
+import os
 
 st.title("Amazon Bedrock Agentic Chatbot")  # Title of the application
 
@@ -34,7 +35,10 @@ for message in st.session_state.messages:
                         st.markdown(trace["text"])
 
         st.markdown(message["content"][0]["text"])
-        # TODO show images
+        if "images" in message:
+            for image in message["images"]:
+                image_data = Image.open(image)
+                st.image(image_data, use_column_width=True)
 
 if prompt := st.chat_input("How can I help??"):
     st.session_state.messages.append({"role": "user", "content": [{"text": prompt}]})
@@ -53,7 +57,10 @@ if prompt := st.chat_input("How can I help??"):
 
         message_placeholder.markdown(result["text"])
 
-        # TODO show images
+        if "images" in result:
+            for image in result["images"]:
+                image_data = Image.open(image)
+                st.image(image_data, use_column_width=True)
 
     st.session_state.messages.append(
         {
